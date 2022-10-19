@@ -197,6 +197,17 @@ namespace RationalNumbers
         }
 
         /// <summary>
+        /// Negates the Fraction
+        /// </summary>
+        /// <param name="a">arg 1</param>
+        /// <param name="b">arg 2</param>
+        /// <returns>Fraction</returns>
+        public static Fraction operator -(Fraction a)
+        {
+            return new(-a.Numerator, a.Denominator);
+        }
+
+        /// <summary>
         /// Multiplies 2 fractions
         /// </summary>
         /// <param name="a">arg 1</param>

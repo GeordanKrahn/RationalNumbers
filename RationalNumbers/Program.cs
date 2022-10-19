@@ -22,3 +22,4 @@ Fraction fraction9 = fraction5 * fraction4;
 Fraction fraction10 = fraction5 / fraction4;
 WriteLine(fraction9);
 WriteLine(fraction10);
+WriteLine(-fraction);
