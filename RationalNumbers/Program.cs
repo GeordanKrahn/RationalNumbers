@@ -1,25 +1,30 @@
 ﻿// See https://aka.ms/new-console-template for more information
 using static System.Console;
-using RationalNumbers; // Make sure to link the file
+using RationalNumbers; // Make sure to link the namespace0
 
 
 // The following lines are all tests for the Fraction class.
-Fraction fraction = new(1, 5), fraction2 = new(36, 60);
+Fraction fraction = new(6, 12), fraction2 = new(36, 60);
+Fraction fraction3 = fraction.Simplified();
 WriteLine(fraction);
-WriteLine(fraction2);
-Fraction fraction3 = fraction2.Simplified();
 WriteLine(fraction3);
-WriteLine(fraction3.Float);
-WriteLine(fraction2.Double);
-Fraction fraction4 = new(1, 3), fraction5 = new(5, 2);
-Fraction fraction6 = fraction4 + fraction5;
-Fraction fraction7 = fraction4 - fraction5;
-Fraction fraction8 = fraction5 - fraction4;
-WriteLine(fraction6);
-WriteLine(fraction7);
-WriteLine(fraction8);
-Fraction fraction9 = fraction5 * fraction4;
-Fraction fraction10 = fraction5 / fraction4;
-WriteLine(fraction9);
-WriteLine(fraction10);
-WriteLine(-fraction);
+Fraction a = new(1, 3), b = new(-2 , 3);
+Fraction c = a + b;
+Fraction d = a - b;
+Fraction e = b - a;
+Fraction f = a * b;
+Fraction g = a / b;
+WriteLine(a);
+WriteLine(b);
+WriteLine(c);
+WriteLine(d);
+WriteLine(e);
+WriteLine(f);
+WriteLine(g);
+g.Invert();
+WriteLine(g);
+Fraction h = new();
+if(g.Inverted(g, out h))
+{
+    WriteLine(h);
+}

@@ -86,12 +86,13 @@ namespace RationalNumbers
         /// <summary>
         /// Switches the Denominator and Numerator
         /// </summary>
-        /// <param name="success">If this fails, a division by Zero occured.</param>
+        /// <param name="success">If this fails, a division by Zero occured</param>
         /// <returns>a new fraction with the values switched.</returns>
-        public Fraction Inverted(out bool success)
+        public bool Inverted(Fraction a, out Fraction b)
         {
-            success = Numerator != 0;
-            return success ? new(Denominator, Numerator) : new(-1, 1);
+            bool success = a.Numerator != 0;
+            b = success ? new(a.Denominator, a.Numerator) : a;
+            return success;
         }
 
         /// <summary>
@@ -110,7 +111,13 @@ namespace RationalNumbers
         /// </summary>
         public void Invert()
         {
-
+            Fraction a = new();
+            if(Inverted(this, out a))
+            {
+                Denominator = a.Denominator;
+                Numerator = a.Numerator;
+            }
+            
         }
 
         /// <summary>
@@ -137,14 +144,14 @@ namespace RationalNumbers
         {
             List<int> aFactors = new(), bFactors = new();
             int GCF = 1;
-            for (int i = (int)(a / 2.0f); i > 0; i--)
+            for (int i = (int)a; i > 0; i--)
             {
                 if (a % i == 0)
                 {
                     aFactors.Add(i);
                 }
             }
-            for (int i = (int)(b / 2.0f); i > 0; i--)
+            for (int i = (int)b; i > 0; i--)
             {
                 if (b % i == 0)
                 {
